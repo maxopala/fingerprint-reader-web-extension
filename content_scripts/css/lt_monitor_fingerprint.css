@@ -1,0 +1,8 @@
+.div-finger-button {
+	cursor: pointer;
+}
+
+.div-finger-button:HOVER {
+	border-color: #204a87;
+	border-width: 5px;
+}
