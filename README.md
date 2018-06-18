@@ -18,7 +18,7 @@ Just access the [web extension page](LINK TO WEB EXTENSION) and install it!
 If You preffer, You can checkout the project and build yourself using the following command from the root repository directory:
 
 ```
-web-ext build --ignore-files "build.sh" "build/*" -o -a "build"
+web-ext build --ignore-files "build.sh" "build/*" "demo/*" -o -a "build"
 ```
 After that, You can install the generated zip file on your browser.
 
