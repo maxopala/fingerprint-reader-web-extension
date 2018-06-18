@@ -9,10 +9,10 @@ Currently, only the folowing readers are supported:
 ---
 
 ## 1. How to install the extension
-For install the extension, it's necessary install the [web extension](LINK TO WEB EXTENSION) on browser and install the native component on computer.
+For install the extension, it's necessary install the [web extension](https://addons.mozilla.org/en-US/firefox/addon/fingerprint-reader/) on browser and install the native component on computer.
 
 ### 1.1. Installing the web extension
-Just access the [web extension page](LINK TO WEB EXTENSION) and install it!
+Just access the [web extension page](https://addons.mozilla.org/en-US/firefox/addon/fingerprint-reader/) and install it!
 
 ### 1.1.1. Building the web extension
 If You preffer, You can checkout the project and build yourself using the following command from the root repository directory:
