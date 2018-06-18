@@ -1,5 +1,5 @@
 var appReader = {
-	appName: 'br.com.maxopala.fingerprint_reader',
+	appName: 'br.com.maxgontijo.fingerprint_reader',
 	port: null,
 	start: function(request, sendResponse) {
 		this.stop(() => {

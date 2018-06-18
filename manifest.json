@@ -1,7 +1,7 @@
 {
 	"applications": {
 		"gecko": {
-			"id": "fingerprint_reader@maxopala.com.br"
+			"id": "fingerprint_reader@maxgontijo.com.br"
 		}
 	},
 	"manifest_version": 2,

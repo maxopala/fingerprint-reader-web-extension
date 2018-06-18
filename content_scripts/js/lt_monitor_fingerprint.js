@@ -49,13 +49,13 @@ function fingerprintReaderStopListener() {
 
 function adicionarEventos() {
 	try {
-		var elements = document.getElementsByClassName('br_com_maxopala-fingerprint_reader-trigger-start');
+		var elements = document.getElementsByClassName('br_com_maxgontijo-fingerprint_reader-trigger-start');
 		for (var i = 0; i < elements.length; i++) {
 			elements[i].removeEventListener("click", fingerprintReaderStartListener);
 			elements[i].addEventListener("click", fingerprintReaderStartListener);
 		}
 		
-		elements = document.getElementsByClassName('br_com_maxopala-fingerprint_reader-trigger-stop');
+		elements = document.getElementsByClassName('br_com_maxgontijo-fingerprint_reader-trigger-stop');
 		for (var i = 0; i < elements.length; i++) {
 			elements[i].removeEventListener("click", fingerprintReaderStopListener);
 			elements[i].addEventListener("click", fingerprintReaderStopListener);
