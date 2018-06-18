@@ -114,7 +114,7 @@ function stop_fingerprint_reader(request, sender, sendResponse) {
 browser.runtime.onMessage.addListener((msg, sender, sendResponse) => {
 	if (msg.action == 'load_extension') {
 		browser.tabs.executeScript(sender.tab.id, {
-			file: '/content_scripts/js/lt_monitor_fingerprint.js'
+			file: '/content_scripts/js/fingerprint_reader.js'
 		});
 	} else if (msg.action == 'start_fingerprint_reader') {
 		return start_fingerprint_reader(msg, sender, sendResponse);

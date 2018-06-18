@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset=utf-8>
-		<meta property="br_com_maxgontijo-fingerprint_reader" content="true" />
+		<meta property="mgo-fingerprint" content="true" />
 		<title>Fingerprint Reader - Test</title>
 		<style type="text/css">
 			body {
@@ -61,6 +61,15 @@
 				width: 100%;
 				height: 100%;
 			}
+			
+			.disclaimer {
+				font-size: 10px;
+				color: #204a87;
+			}
+			
+			.title {
+				vertical-align: middle;
+			}
 		</style>
 	</head>
 	
@@ -68,14 +77,18 @@
 		<div id="mainDiv">
 			<form>
 				<center>
-					<h4>Fingerprint Reader - Test</h1>
+					<h4 class="title">
+						<img width="22px" height="22px" src="/icons/fingerprint.svg" />
+						Fingerprint Reader Test
+					</h4>
 					<p style="text-align: center">
-						<button id="btStart" type="button" class="button br_com_maxgontijo-fingerprint_reader-trigger-start">Start</button>
+						<button id="btStart" type="button" class="button">Start</button>
 						<button id="btStop"  type="button" class="button">Stop</button>
 						
 						<div class="fingerprint-div">
 							<img id="fingerprint" />
 						</div>
+						<span class="disclaimer">Only works with Futronic FS88 e FS88H</span>
 					</p>
 				</center>
 			</form>

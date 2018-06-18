@@ -1,6 +1,6 @@
 function verify() {
 	try {
-		return document.head.querySelector("[property='br_com_maxgontijo-fingerprint_reader']").content == "true";
+		return document.head.querySelector("[property='mgo-fingerprint']").content == "true";
 	} catch (e) {}
 	
 	return false;
