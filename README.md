@@ -29,7 +29,7 @@ Currently, its avaible only Linux amd64 native version.
 If it's your case, download and install the [DEB package](LINK TO DEB PACKAGE).
 
 ## 2. How developers can use the extension on web applications
-Since web applications can't access web extensions directly, it's necessary add some lines on your page. But it's easy! Actually, it's need just three steps!
+Since web applications can't access web extensions directly, it's necessary add some lines on your page. But it's easy! Actually, it's need just three steps! The full demo can be viewed [here](https://github.com/maxopala/fingerprint-reader-web-extension/blob/master/demo/fingerprint-reader-demo.html).
 
 ### 2.1. Step 1 - First, add in `head` the following `meta` information:
 ```
