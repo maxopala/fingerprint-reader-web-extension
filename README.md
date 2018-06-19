@@ -46,7 +46,7 @@ After web extension found the `mgo-fingerprint` meta information, it starts sear
 The actions are described as follow:
 
 #### 2.2.1. Start fingerprint reader
-This action is for commands the fingerprint to read. The css class for anchor some html component to invoke tha function is `mgo-fingerprint-tg-start`. See the example:
+This action is for commands the fingerprint to read. The css class for anchor some html component to perform the action is `mgo-fingerprint-tg-start`. See the example:
 
 ```
 <button id="bt-start" type="button" class="mgo-fingerprint-tg-start">Start</button>
