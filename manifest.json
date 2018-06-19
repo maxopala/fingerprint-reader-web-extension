@@ -6,13 +6,13 @@
 	},
 	"manifest_version": 2,
 	"name": "Fingerprint Reader",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Suports developers to include fingerprint readers to web application.",
 	"icons": {
 		"48": "icons/fingerprint.svg"
 	},
 	"author": "Max Gontijo de Oliveira",
-	"homepage_url": "https://github.com/maxopala/fingerprint-reader-web-extension",
+	"homepage_url": "https://maxopala.github.io/fingerprint-reader-web-extension",
 	"permissions": [
 		"webRequest",
 		"tabs",
