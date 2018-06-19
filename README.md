@@ -9,16 +9,16 @@ Currently, only the folowing readers are supported:
 ---
 
 ## 1. How to install the extension
-For install the extension, it's necessary install the [web extension](LINK TO WEB EXTENSION) on browser and install the native component on computer.
+For install the extension, it's necessary install the [web extension](https://addons.mozilla.org/en-US/firefox/addon/fingerprint-reader/) on browser and install the native component on computer.
 
 ### 1.1. Installing the web extension
-Just access the [web extension page](LINK TO WEB EXTENSION) and install it!
+Just access the [web extension page](https://addons.mozilla.org/en-US/firefox/addon/fingerprint-reader/) and install it!
 
 ### 1.1.1. Building the web extension
 If You preffer, You can checkout the project and build yourself using the following command from the root repository directory:
 
 ```
-web-ext build --ignore-files "build.sh" "build/*" -o -a "build"
+web-ext build --ignore-files "build.sh" "build/*" "demo/*" -o -a "build"
 ```
 After that, You can install the generated zip file on your browser.
 
@@ -26,10 +26,10 @@ After that, You can install the generated zip file on your browser.
 Because the fingerprint reader needs native drivers, it's necessary access native resources on computer. Because of security reasons, web extensions can't access native resources directly. However, it's possible to do this by web extensions native connections. So, it's necessary install the native componet.
 
 Currently, its avaible only Linux amd64 native version.
-If it's your case, download and install the [DEB package](LINK TO DEB PACKAGE).
+If it's your case, download and install the [DEB package](https://github.com/maxopala/fingerprint-reader-web-extension/releases/download/v1.0.0/maxgontijo-fingerprint-reader_1.0.0_amd64.deb).
 
 ## 2. How developers can use the extension on web applications
-Since web applications can't access web extensions directly, it's necessary add some lines on your page. But it's easy! Actually, it's need just three steps!
+Since web applications can't access web extensions directly, it's necessary add some lines on your page. But it's easy! Actually, it's need just three steps! The full demo can be viewed [here](https://github.com/maxopala/fingerprint-reader-web-extension/blob/master/demo/fingerprint-reader-demo.html).
 
 ### 2.1. Step 1 - First, add in `head` the following `meta` information:
 ```
@@ -46,7 +46,7 @@ After web extension found the `mgo-fingerprint` meta information, it starts sear
 The actions are described as follow:
 
 #### 2.2.1. Start fingerprint reader
-This action is for commands the fingerprint to read. The css class for anchor some html component to invoke tha function is `mgo-fingerprint-tg-start`. See the example:
+This action is for commands the fingerprint to read. The css class for anchor some html component to perform the action is `mgo-fingerprint-tg-start`. See the example:
 
 ```
 <button id="bt-start" type="button" class="mgo-fingerprint-tg-start">Start</button>
