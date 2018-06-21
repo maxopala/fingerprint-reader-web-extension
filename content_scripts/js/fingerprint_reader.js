@@ -46,22 +46,29 @@ function fingerprintReaderStopListener(evt) {
 	}
 }
 
-function adicionarEventos() {
+function load_events_extension() {
 	try {
-		var elements = document.getElementsByClassName('mgo-fingerprint-tg-start');
-		for (var i = 0; i < elements.length; i++) {
-			elements[i].removeEventListener("click", fingerprintReaderStartListener);
-			elements[i].addEventListener("click", fingerprintReaderStartListener);
-		}
+		var trigger = document.createElement('mgo-fingerprint-load-triggers');
+		trigger.addEventListener("click", (evt) => {
+			var elements = document.getElementsByClassName('mgo-fingerprint-tg-start');
+			for (var i = 0; i < elements.length; i++) {
+				elements[i].removeEventListener("click", fingerprintReaderStartListener);
+				elements[i].addEventListener("click", fingerprintReaderStartListener);
+			}
+			
+			elements = document.getElementsByClassName('mgo-fingerprint-tg-stop');
+			for (var i = 0; i < elements.length; i++) {
+				elements[i].removeEventListener("click", fingerprintReaderStopListener);
+				elements[i].addEventListener("click", fingerprintReaderStopListener);
+			}
+		});
 		
-		elements = document.getElementsByClassName('mgo-fingerprint-tg-stop');
-		for (var i = 0; i < elements.length; i++) {
-			elements[i].removeEventListener("click", fingerprintReaderStopListener);
-			elements[i].addEventListener("click", fingerprintReaderStopListener);
-		}
+		var evt = new CustomEvent('mgo-fingerprint-trigger-load', { detail: trigger });
+		document.dispatchEvent(evt);
 	} catch (e) {
 		console.log(e);
 	}
 }
 
-adicionarEventos();
+load_events_extension();
+

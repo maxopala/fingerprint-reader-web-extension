@@ -113,6 +113,20 @@ function stop_fingerprint_reader(request, sender, sendResponse) {
 
 browser.runtime.onMessage.addListener((msg, sender, sendResponse) => {
 	if (msg.action == 'load_extension') {
+		console.log(sender);
+		
+		const urls = [ "*://" + sender.url.split('//')[1].split('/')[0].split(':')[0] + "/*" ];
+		
+		/*
+		browser.webRequest.onCompleted.addListener(
+			function update(request) => {
+				browser.tabs.executeScript(sender.tab.id, {
+					file: '/content_scripts/js/fingerprint_reader.js'
+				});
+			},{urls: urls}
+		);
+		*/
+		
 		browser.tabs.executeScript(sender.tab.id, {
 			file: '/content_scripts/js/fingerprint_reader.js'
 		});
