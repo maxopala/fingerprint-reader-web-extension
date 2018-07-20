@@ -26,7 +26,7 @@ After that, You can install the generated zip file on your browser.
 Because the fingerprint reader needs native drivers, it's necessary access native resources on computer. Because of security reasons, web extensions can't access native resources directly. However, it's possible to do this by web extensions native connections. So, it's necessary install the native componet.
 
 Currently, its avaible only Linux amd64 native version.
-If it's your case, download and install the [DEB package](https://github.com/maxopala/fingerprint-reader-web-extension/releases/download/v1.1.0/maxgontijo-fingerprint-reader_1.0.2_amd64.deb) or the [RPM package](https://github.com/maxopala/fingerprint-reader-web-extension/releases/download/v1.1.0/maxgontijo-fingerprint-reader-1.0-1.x86_64.rpm).
+If it's your case, download and install the last version of the **DEB package** or the **RPM package** from this [link](https://github.com/maxopala/fingerprint-reader-web-extension/releases).
 
 ## 2. How developers can use the extension on web applications
 Since web applications can't access web extensions directly, it's necessary add some lines on your page. But it's easy! Actually, it's need just three steps! The full demo can be viewed [here](https://github.com/maxopala/fingerprint-reader-web-extension/blob/master/demo/fingerprint-reader-demo.html).
