@@ -6,7 +6,7 @@
 	},
 	"manifest_version": 2,
 	"name": "Fingerprint Reader",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "Supports developers to include fingerprint readers to web application.",
 	"icons": {
 		"48": "icons/fingerprint.svg"

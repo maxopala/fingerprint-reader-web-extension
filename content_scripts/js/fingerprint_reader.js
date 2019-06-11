@@ -1,3 +1,24 @@
+function flipVerticalBase64(imageBase64, callback) {
+    var canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    
+    var img = new Image();
+    img.width = 320;
+    img.height = 480;
+    img.src = 'data:image;base64,' + imageBase64;
+    
+    canvas.width  = img.width;
+    canvas.height = img.height;
+    
+    ctx.translate(0,img.height);
+    ctx.scale(1,-1);
+    setTimeout(()=>{
+	    ctx.drawImage(img,0,0);
+	    var s = canvas.toDataURL();
+	    callback(s.split(',')[1]);
+    }, 200);
+}
+
 function fingerprintReaderStartListener(evtFrom) {
 	try {
 		const trigger = this;
@@ -6,8 +27,13 @@ function fingerprintReaderStartListener(evtFrom) {
 				if (message.error) {
 					console.log(message.error);
 				} else {
-					var evt = new CustomEvent('mgo-fingerprint-capture-event', { detail: message.fingerprint });
-					trigger.dispatchEvent(evt);
+					console.log('message.fingerprint', message.fingerprint);
+					flipVerticalBase64(message.fingerprint, (imageFlipped)=>{
+						console.log('imageFlipped', imageFlipped);
+						var imagSrc = imageFlipped;
+						var evt = new CustomEvent('mgo-fingerprint-capture-event', { detail: imagSrc });
+						trigger.dispatchEvent(evt);
+					});
 				}
 			},
 			function(error) {

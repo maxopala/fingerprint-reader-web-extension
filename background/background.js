@@ -1,6 +1,23 @@
 var appReader = {
 	appName: 'br.com.maxgontijo.fingerprint_reader',
 	port: null,
+	_flipVerticalBase64: function(imageBase64) {
+		var canvas = document.createElement("canvas");
+	    var ctx = canvas.getContext("2d");
+	    
+	    var img = new Image();
+	    img.width = 320;
+	    img.height = 480;
+	    img.src = 'data:image/bmp;base64,' + imageBase64;
+	    
+	    canvas.width  = img.width;
+	    canvas.height = img.height;
+	    
+//	    ctx.translate(0,img.height);
+//	    ctx.scale(1,-1);
+	    ctx.drawImage(img,0,0);
+	    return canvas.toDataURL().split(',')[1];
+	},
 	start: function(request, sendResponse) {
 		this.stop(() => {
 			var p = browser.runtime.sendNativeMessage(this.appName, "start");
@@ -8,6 +25,11 @@ var appReader = {
 					(response)=>{
 						try {
 							var fingerprint64 = drawArray(_base64ToArrayBuffer(response), 8);
+							
+							//fingerprint64 = appReader._flipVerticalBase64(fingerprint64);
+							
+//							console.log('fingerprint64', fingerprint64);
+							
 							sendResponse({ dedo: request.dedo, fingerprint: fingerprint64 });
 						} catch (e) {
 							appReader.sendResponseError(sendResponse, e);

@@ -1,3 +1,24 @@
+function flipVerticalBase64(imageBase64, callback) {
+    var canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    
+    var img = new Image();
+    img.width = 320;
+    img.height = 480;
+    img.src = 'data:image;base64,' + imageBase64;
+    
+    canvas.width  = img.width;
+    canvas.height = img.height;
+    
+    ctx.translate(0,img.height);
+    ctx.scale(1,-1);
+    setTimeout(()=>{
+	    ctx.drawImage(img,0,0);
+	    var s = canvas.toDataURL();
+	    callback(s.split(',')[1]);
+    }, 200);
+}
+
 var bt_start_reader = document.getElementById("btStart");
 bt_start_reader.onclick = function() {
 	try {
@@ -9,7 +30,11 @@ bt_start_reader.onclick = function() {
 				} else {
 					try {
 						var fingerprint = document.getElementById('fingerprint');
-						fingerprint.src = 'data:image;base64,' + message.fingerprint;
+						
+						flipVerticalBase64(message.fingerprint, (imageFlipped)=>{
+							var imagSrc = 'data:image;base64,' + imageFlipped;
+							fingerprint.src = imagSrc;
+						});
 					} catch (e) {
 						console.log(e);
 					}
